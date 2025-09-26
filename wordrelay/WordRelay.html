@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="x-UA-Compatible" content="ie=edge"/>
+    <title>끝말잇기</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+</head>
+<body>
+    <div id="root">
+        <word-relay start-word="강아지"></word-relay>
+        <word-relay start-word="바나나"></word-relay>
+        <word-relay start-word="고릴라"></word-relay>
+        <!--<div>{{word}}</div>
+        <form v-on:submit="onSubmitForm">
+            <input type="text" ref="value" v-model="value">
+            <button type="submit">입력!</button>
+        </form>
+        <div id="result">{{result}}</div>-->
+    </div>
+    <script>
+        const WordRelay = {
+            props: [`startWord`],
+            template: `
+              <div>
+                <div>{{word}}</div>
+                    <form v-on:submit="onSubmitForm">
+                        <input type="text" ref="value" v-model="value">
+                        <button type="submit">입력!</button>
+                    </form>
+                <div id="result">{{result}}</div>
+              </div>
+            `,
+            data() {
+                return {
+                    word: '',
+                    result: '',
+                    value: ''
+                }
+            },
+            mounted() {
+                console.log('mounted props:', this.startWord);
+                this.word = this.startWord;
+            },
+            methods: {
+                onSubmitForm(e) {
+                    e.preventDefault();
+                    if(this.word[this.word.length - 1] === this.value[0]) {
+                        this.result = '딩동댕';
+                        this.word = this.value;
+                    } else {
+                        this.result = '땡';
+                    }
+                    this.value = '';
+                    this.$refs.value.focus();
+                },
+            }
+        };
+    </script>
+    <script>
+        const { createApp } = Vue;
+
+        // component의 특성은 여러개를 사용하는 것을 전제로 하고 있음. 그렇기 때문에 데이터가 각각 컴포넌트마다 달라야 함
+        createApp({
+            components: {
+                WordRelay
+            }
+        /*    data() {
+                return {
+                    word: '제로초',
+                    result: '',
+                    value: '',
+                };
+            },
+            methods: {
+                onSubmitForm(e) {
+                    e.preventDefault();
+                    if(this.word[this.word.length - 1] === this.value[0]) {
+                        this.result = '딩동댕';
+                        this.word = this.value;
+                        this.value = '';
+                        this.$refs.value.focus();
+                    } else {
+                        this.result = '땡';
+                        this.value = '';
+                        this.$refs.value.focus();
+                    }
+                },
+            },*/
+        }).mount('#root');
+    </script>
+</body>
+</html>

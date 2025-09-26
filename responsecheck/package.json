@@ -1,0 +1,21 @@
+{
+  "name": "response-check",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack",
+    "watch": "webpack --watch"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "vue": "^3.5.22"
+  },
+  "devDependencies": {
+    "vue-loader": "^17.4.2",
+    "vue-template-compiler": "^2.7.16",
+    "webpack": "^5.101.3",
+    "webpack-cli": "^6.0.1"
+  }
+}

@@ -33,4 +33,13 @@ module.exports = {
     path: path.join(__dirname, 'dist'),
     publicPath: '',
   },
+    devServer: {
+        static: {
+            directory: path.join(__dirname, 'public'),
+            serveIndex: true,
+        },
+        watchFiles: ['**/*.js', '**/*.vue', '**/*.css'],
+        port: 8080,
+        open: true,
+    }
 };

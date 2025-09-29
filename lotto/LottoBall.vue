@@ -1,5 +1,5 @@
 <template>
-  <div class="ball" :style="styelObject">{{number}}</div>
+  <div class="ball" :style="styleObject">{{number}}</div>
 </template>
 
 <script>
@@ -11,7 +11,7 @@
     },
 */
     props: ['number'],
-    computed: {
+    computed: {                       /* conputed : 하나의 새로운 값을 리턴 */
       styleObject() {
         let background;
         if (this.number < 10) {

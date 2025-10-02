@@ -5,7 +5,7 @@
 <script>
   export default{
     name: 'LottoBall',
-/*                        props -> LottoGenerator 컴포넌트가 LottoBall 컴포넌트를 사용하는데 부모가 자식한테 데이터를 넘겨줄 수 있다.
+/*                        props -> LottoGenerator 컴포넌트가 TicTacToe 컴포넌트를 사용하는데 부모가 자식한테 데이터를 넘겨줄 수 있다.
     props: {
       number: Number,
     },

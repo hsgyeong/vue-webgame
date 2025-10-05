@@ -8,12 +8,16 @@
 <script>
 import TrComponent from './TrComponent';
 export default {
-  props: {
-    tableData: Array,
-    turn: String,
-  },
   components: {
     TrComponent,
   },
+  computed: {
+    tableData() {
+      return this.$store.state.tableData;
+    },
+    turn() {
+      return this.$store.state.turn;
+    },
+  }
 }
 </script>

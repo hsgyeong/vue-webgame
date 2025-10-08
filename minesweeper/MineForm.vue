@@ -22,10 +22,10 @@
         this.row = e.target.value;
       },
       onChangeCell(e) {
-        this.cell = e.target.value;
+        this.row = e.target.value;
       },
       onChangeMine(e) {
-        this.mine = e.target.value;
+        this.row = e.target.value;
       },
       onClickBtn() {
         this.$store.commit(START_GAME, {row: this.row, cell: this.cell, mine: this.mine});

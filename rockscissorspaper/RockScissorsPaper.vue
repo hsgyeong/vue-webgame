@@ -108,7 +108,7 @@
   };
 </script>
 
-<style scoped>
+<style>
   #computer {
     width: 142px;
     height: 200px;

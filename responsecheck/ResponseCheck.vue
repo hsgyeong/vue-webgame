@@ -53,7 +53,7 @@
   }
 </script>
 
-<style scoped>  /*scoped를 붙이면 해당 컴포넌트 안에서만 css를 사용할 수 있음*/
+<style>  /*scoped를 붙이면 해당 컴포넌트 안에서만 css를 사용할 수 있음*/
   #screen {
     width: 300px;
     height: 200px;
